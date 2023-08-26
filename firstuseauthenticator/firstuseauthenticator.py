@@ -41,6 +41,9 @@ class CustomLoginHandler(LoginHandler):
 
 
 class ResetPasswordHandler(BaseHandler):
+    def check_xsrf_cookie(self):
+        return
+
     """Render the reset password page."""
     def __init__(self, *args, **kwargs):
         self._loaded = False
